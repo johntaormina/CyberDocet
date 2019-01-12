@@ -1,0 +1,31 @@
+.header {
+    background: $blue2;
+    color: black;
+    margin-bottom: $l-size;
+    
+}
+
+.header__button{
+    font-size: $l-size;
+    margin: 0;
+    padding: 1.2rem;
+    color: white;
+    border: 0px solid $gray1;
+    border-right: 1px solid $gray1;
+    border-left: 1px solid $gray1;
+    background-color: $blue1;
+}
+
+.header--left{
+    display: inline-block;
+}
+
+.header--right{
+    float: right;
+}
+
+.header__divider {
+    width: 50rem;
+    height: auto;
+    display: inline-block;
+}
