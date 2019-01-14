@@ -75,9 +75,7 @@ const ListOfCourses = ({allCourseData}) => (
 
         <div className="row">
         <h2>Course: {allCourseData[courseName].title} </h2>
-        <AppLandingButton
-        courseURL={allCourseData[courseName].title.toLowerCase()}
-        />
+        
         </div>
 
         <ListOfSections 
@@ -110,7 +108,7 @@ class ListOfSections extends React.Component {
     };
 
     render() {
-       
+      
         return (
             <ul>
             <div>
@@ -118,7 +116,7 @@ class ListOfSections extends React.Component {
                 <div key={section} className="row">
 
                 <h4>
-                {this.courseData[section].title} Completed: 
+                {this.courseData[section].title} Completed:
                 {this.courseData[section].completed ? ' YES' : ' NO'}
                 </h4>
                 <AppSectionButton

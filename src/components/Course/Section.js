@@ -5,6 +5,9 @@ import NotFound from './../NotFound.js';
 import SignInPage from '../authentication/SignIn';
 import Youtube from 'react-youtube';
 import SectionVideo from './section/SectionVideo';
+import Quiz from 'react-quiz-component';
+import SectionQuiz from './section/SectionQuiz';
+
 
 class Course extends React.Component {
     constructor(props){
@@ -75,7 +78,7 @@ class CourseExists extends React.Component {
         const {courseData, loading} = this.state;
         const sectionData = {...this.getSectionInfo(courseData,this.id)}
         const titleExists = !!sectionData.title;
-
+       
         return (
             <div>
                 {loading && <div>Loading...</div>}
@@ -99,7 +102,6 @@ class GenerateSection extends React.Component {
     }
 
     render() {
-        
         return (
             <div>
 
@@ -109,10 +111,22 @@ class GenerateSection extends React.Component {
             </div>
 
             <div>
+
+            {!!this.sectionData.videoID ? 
+                <div>
                 <SectionVideo
                     sectionData={this.sectionData}
                     props={this.props}
                 />
+                </div> :
+                <div>
+                    <SectionQuiz sectionQuiz={this.sectionData.sectionQuiz}
+                        props={this.props}
+                        sectionData={this.sectionData}
+                    />
+                </div>
+            }
+                
             </div>
 
             </div>

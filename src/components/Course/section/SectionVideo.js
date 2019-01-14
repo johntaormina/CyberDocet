@@ -1,8 +1,9 @@
 import React from 'react';
 import Youtube from 'react-youtube';
-import NotFound from '../../NotFound';
 
 class SectionVideo extends React.Component {
+    _isMounted = false;
+    
     constructor(props){
         super(props);
         this.firebase = this.props.props.props.firebase;
@@ -10,6 +11,9 @@ class SectionVideo extends React.Component {
         this.courseOfSection = this.props.sectionData.course;
         this.uid = this.props.props.props.data.uid;
         this.videoID = this.props.sectionData.videoID;
+        this.name = this.props.sectionData.name;
+        
+        
 
         this.state = {
             sectionData: {},
@@ -18,9 +22,11 @@ class SectionVideo extends React.Component {
     }
 
     componentDidMount(){
-        this.setState({loading: true});
-        this.firebase.section(this.uid, this.sectionTitle, this.courseOfSection)
-        .on('value', snapshot => {
+        this._isMounted = true;
+        if (this._isMounted){
+            this.setState({loading: true});
+                this.firebase.section(this.uid, this.name, this.courseOfSection)
+                .on('value', snapshot => {
             const object = snapshot.val();
 
             this.setState({
@@ -28,12 +34,18 @@ class SectionVideo extends React.Component {
             })
             this.setState({loading: false});
         });
+        }
+        
     }
 
     updateSectionAsCompleted(){
-        this.firebase.section(this.uid, this.sectionTitle, this.courseOfSection)
+        this.firebase.section(this.uid, this.name, this.courseOfSection)
         .update({completed: true})
     }
+
+    componentWillUnmount() {
+        this._isMounted = false;
+      }
 
     render(){
         const opts = {
