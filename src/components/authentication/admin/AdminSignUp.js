@@ -1,30 +1,27 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import FirebaseContext, { withFirebase } from './../firebase/context.js';
-import * as ROUTES from './../../routers/routes.js';
-import InitialCourseState from './InitialCourseState.js';
-
+import FirebaseContext, { withFirebase } from './../../firebase/context';
+import * as ROUTES from './../../../routers/routes';
 
 const INITIAL_STATE = {
-    companyID: '',
     username: '',
+    company: '',
     email: '',
     passwordOne: '',
     passwordTwo: '',
     error: null,
 };
 
-const INITIAL_COURSE_STATE = InitialCourseState;
 
-const SignUpPage = () => (
+const AdminSignUpPage = () => (
     <div>
-        <h1>SignUp</h1>
-        <SignUpForm />
+        <h1>Admin SignUp</h1>
+        <AdminSignUpForm />
     </div>
 );
 
-class SignUpFormBase extends React.Component {
+class AdminSignUpFormBase extends React.Component {
     constructor(props) {
         super(props);
 
@@ -32,35 +29,29 @@ class SignUpFormBase extends React.Component {
         
     }
 
-    componentDidMount(){
-        // console.log('the-best-company129');
-        // let value = this.props.firebase.adminOfCompany('the-best-company129', '22');
-        // value.then(function(res){
-        //     console.log(res);
-        // })
-    }
-
     onSubmit = event => {
-        const { username, email, passwordOne, companyID } = this.state;
-        let uid = "";
+        const { username, company, email, passwordOne } = this.state;
+
+        // Creating company ID for employee signup and saving it
+        
+        const companyID = (company.replace(/ +/g, "-"))
+        .concat(Math.floor(Math.random()*1000).toString());
+        
+        //
+
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
-                uid = authUser.user.uid;
                 // Create a user in your Firebase realtime database
                 return this.props.firebase
-                    .user(authUser.user.uid)
+                    .admin(authUser.user.uid)
                     .set({
                         username,
+                        company, 
                         email,
                         companyID,
-                        Courses: INITIAL_COURSE_STATE
+                        employees: []
                     });
-            })
-            .then(() => {
-                // Create a user in your Firebase realtime database
-                return this.props.firebase
-                    .addToCompanyList(companyID, uid);
             })
             .then(() => {
                 this.setState({ ...INITIAL_STATE });
@@ -79,8 +70,8 @@ class SignUpFormBase extends React.Component {
 
     render() {
         const {
-            companyID,
             username,
+            company, 
             email,
             passwordOne,
             passwordTwo,
@@ -91,19 +82,10 @@ class SignUpFormBase extends React.Component {
             passwordOne !== passwordTwo ||
             passwordOne === '' ||
             email === '' ||
-            username === '' || 
-            companyID ==='';
+            username === '';
 
         return (
             <form onSubmit={this.onSubmit}>
-                <input
-                    name="companyID"
-                    value={companyID}
-                    onChange={this.onChange}
-                    type="text"
-                    placeholder="Company SignUp ID"
-                  
-                />
                 <input
                     name="username"
                     value={username}
@@ -111,6 +93,13 @@ class SignUpFormBase extends React.Component {
                     type="text"
                     placeholder="Full Name"
                   
+                />
+                <input
+                    name="company"
+                    value={company}
+                    onChange={this.onChange}
+                    type="text"
+                    placeholder="Company Name"
                 />
                 <input
                     name="email"
@@ -145,17 +134,17 @@ class SignUpFormBase extends React.Component {
 }
 
 
-const SignUpLink = () => (
+const AdminSignUpLink = () => (
     <p>
-        Don't have an account? <Link to="/signup">Sign Up</Link>
+        Admin SignUp! <Link to="/adminsignup">Sign Up</Link>
     </p>
 );
 
-const SignUpForm = compose(
+const AdminSignUpForm = compose(
     withRouter,
     withFirebase,
-)(SignUpFormBase);
+)(AdminSignUpFormBase);
 
-export default SignUpPage;
+export default AdminSignUpPage;
 
-export { SignUpForm, SignUpLink };
+export { AdminSignUpForm, AdminSignUpLink };

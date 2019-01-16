@@ -48,6 +48,7 @@ class Firebase {
 
     users = () => this.db.ref('users');
 
+
     section = (uid, sectionTitle, courseOfSection) => 
     this.db.ref(`users/${uid}/Courses/${courseOfSection}/${sectionTitle}`)
 
@@ -61,6 +62,39 @@ class Firebase {
         ));
         return courseSections;
     };
+
+    //
+    // ADMIN STUFF
+    //
+
+    admin = uid => this.db.ref(`admins/${uid}`);
+
+    adminEmployeeList = uid => this.db.ref(`admins/${uid}/employees`);
+
+    // Finds who the admin is of companyID and then
+    // adds that username to employee list given userUID
+    async addToCompanyList(companyID, userUID) {
+        var res = "";
+
+        var adminsRef = this.db.ref('admins');
+
+        var snapshot = await adminsRef.once("value");
+
+        if(snapshot.exists()){ // find admin ID and set to res
+            let data = snapshot.val();
+            Object.keys(data).forEach(key => {
+                if(data[key].companyID === companyID){
+                    this.db.ref(`admins/${key}/employees`).push(userUID);
+                    res = true;
+                }
+            })
+        }else{
+            res = false;
+        }
+        return res;
+    }
+     
+    
     
 }
 

@@ -3,12 +3,12 @@ import CyberApp from '../components/CyberApp.js';
 import About from '../components/About.js';
 import Courses from '../components/Courses.js';
 import Header from '../components/Header.js'
-import Landing from '../components/Landing.js';
 import SignIn from '../components/authentication/SignIn.js';
 import SignUp from '../components/authentication/SignUp.js';
 import Admin from '../components/Admin.js';
 import Course from '../components/Course/Course.js';
-import NotFound from '../components/NotFound.js';
+import AdminSignUp from '../components/authentication/admin/AdminSignUp.js';
+import AdminSignIn from '../components/authentication/admin/AdminSignIn.js';
 
 import * as ROUTES from './routes.js';
 
@@ -24,10 +24,13 @@ class AppRouter extends React.Component {
     return (
     <BrowserRouter>
         <div>
-            <Header/>
+
+            <Header/>            
             <Switch>
-                <Route exact path={ROUTES.LANDING} component={Landing}/>
+                <Route exact path={ROUTES.LANDING} component={CyberApp}/>
                 <Route path={ROUTES.SIGN_UP} component={SignUp}/>
+                <Route path={ROUTES.ADMIN_SIGN_UP} component={AdminSignUp}/>
+                <Route path={ROUTES.ADMIN_SIGN_IN} component={AdminSignIn}/>
                 <Route path={ROUTES.SIGN_IN} component={SignIn}/>
                 <Route path={ROUTES.HOME} component={CyberApp}  />
                 <Route path={ROUTES.COURSES} component={Courses}/> 
@@ -35,7 +38,7 @@ class AppRouter extends React.Component {
                 <Route path={ROUTES.ADMIN} component={Admin} />
                 <Route path={ROUTES.HOME} component={CyberApp}  />
                 <Route path="/course/:course/:id?" component={Course}/>
-                <Route path="/*" component={Landing}/>
+                <Route path="/*" component={CyberApp}/>
 
             </Switch>
         </div>
@@ -47,4 +50,4 @@ class AppRouter extends React.Component {
 }
 
 
-export default withAuthentication(AppRouter);
+export default (withAuthentication(AppRouter));
