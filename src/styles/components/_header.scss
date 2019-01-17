@@ -1,19 +1,51 @@
 .header {
-    background: $blue2;
+    background: $shark;
     color: black;
     margin-bottom: $l-size;
-    
+    margin-top: -8px;
+    position: relative;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: .4rem;
 }
 
 .header__button{
-    font-size: $l-size;
-    margin: 0;
-    padding: 1.2rem;
+    font-size: 2.8rem;
     color: white;
     border: 0px solid $gray1;
-    border-right: 1px solid $gray1;
-    border-left: 1px solid $gray1;
-    background-color: $blue1;
+    margin-top: 1.6rem;
+    padding: 1rem;
+    background-color: $shark;
+    transition: all 0.3s ease 0s; 
+    margin-right: 20px;
+}
+
+.header__button:hover {
+    background-color: $rock-blue;
+    opacity: 1;
+    cursor: pointer;
+    
+}
+
+.header__logo{
+    background: url('/images/name-white.png');
+    background-repeat: no-repeat; 
+    background-size: 200px 70px;
+    background-position: left top;
+    width: 200px;
+    border: 0px solid $gray1;
+    padding: 3.8rem;
+    transition: all 0.4s ease 0s; 
+}
+
+.header__logo:hover{
+    background-color: $rock-blue;
+    opacity: 1;
+    cursor: pointer;
+    background: url('/images/logo-white.png');
+    background-repeat: no-repeat; 
+    background-size: 35%;
+    background-position: 3rem center;
 }
 
 .header--left{

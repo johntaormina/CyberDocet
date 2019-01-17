@@ -11,8 +11,12 @@ firebase-debug.log*
 ./src/components/firebase/firebase.js
 
 # Firebase config
-firebase
-./firebase/*
+
+./src/firebase/*
+
+# public
+public/
+
 # Uncomment this if you'd like others to create their own Firebase project.
 # For a team working on the same Firebase project(s), it is recommended to leave
 # it commented so all members can deploy to the same project(s) in .firebaserc.

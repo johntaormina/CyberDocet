@@ -84,9 +84,8 @@ const UserHeader = () => (
 
     <div className="header--left">
     <NavLink to={ROUTES.LANDING}>
-    <button className="header__button">
-    CyberDocet
-    </button></NavLink>
+    <button className="header__logo"/>
+    </NavLink>
     </div>
 
     <div className="header--right">
@@ -113,23 +112,24 @@ const AdminHeader = () => (
 
     <div className = "header">
 
-    <div className="header--left">
-    <NavLink to={ROUTES.LANDING}>
-    <button className="header__button">
-    CyberDocet
-    </button></NavLink>
-    </div>
+        <div className="header--left">
+            <NavLink to={ROUTES.LANDING}>
 
-    <div className="header--right">
+            <button className="header__logo"/>
 
-    <NavLink to={ROUTES.ABOUT}>
-    <button className="header__button">
-    About
-    </button></NavLink>
+            </NavLink>
+        </div>
 
-    <SignOutButton/>
+        <div className="header--right">
 
-    </div>
+            <NavLink to={ROUTES.ABOUT}>
+            <button className="header__button">
+            About
+            </button></NavLink>
+
+            <SignOutButton/>
+
+        </div>
         
     </div>  
     </header> 
@@ -142,9 +142,9 @@ const HeaderNotAuth = (props) => (
 
     <div className="header--left">
     <NavLink to={ROUTES.LANDING}>
-    <button className="header__button">
-    CyberDocet
-    </button></NavLink>
+    <button className="header__logo"/>
+    
+    </NavLink>
     </div>
     
     <div className="header--right">

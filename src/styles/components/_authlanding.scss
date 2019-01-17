@@ -1,0 +1,61 @@
+
+.authlanding__container {
+    display: flex;
+    flex-direction: row;
+    margin: 8rem 20rem;
+}
+
+.authlanding__container__user {
+    background: $shark;
+    max-width: 36rem;
+    margin: auto;
+    border: 1px solid $tower-gray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    flex: 0 0 65%;
+}
+
+.authlanding__container__admin {
+    background: $shark;
+    max-width: 36rem;
+    margin: auto;
+    border: 1px solid $tower-gray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    flex: 1;
+}
+
+.authlanding__headertext {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+}
+
+.authlanding__button {
+    background-color: $pampas;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: auto;   
+    width: 100%;
+    padding: 2rem;
+    font-size: 130%;
+    transition: all 0.3s ease 0s;   
+}
+
+.authlanding__button:hover {
+    background-color: $blue-bayoux;
+    opacity: 1;
+    color: white;
+    cursor: pointer;
+}
+
+.authlanding__button__container {
+    margin: auto;
+    width: 50%;
+    border: 1px solid black;
+    margin-bottom: 3.6rem;
+
+}

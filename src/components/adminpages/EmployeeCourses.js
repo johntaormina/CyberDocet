@@ -57,7 +57,12 @@ class EmployeeList extends React.Component{
     render(){
         return(
             <div>
-            <h2>Employees: </h2>
+            <h2>Employees</h2>
+
+            
+            <div className="emp__main__container">
+            
+            
             <ul>
                 {this.props.employees.map(employee =>(
                     <EmployeeData 
@@ -66,6 +71,8 @@ class EmployeeList extends React.Component{
                     key={employee}/>
                 ))}
             </ul>
+            </div>
+
             </div>
         )
         
@@ -105,11 +112,20 @@ class EmployeeData extends React.Component{
             <div>
                 {loading && <div></div>}
                 {!loading ? 
-                    <div>
-                        <p>{data.username}                 
+                    <div className="emp__data__container">
+                        <div>
+
+                        <p className="emp__name">
+                        {data.username}
                         </p>
+                           
+                        </div>
+
+                        <div className="progress__bar">
                         <CourseProgress courseData={data.Courses}/>
-                        <p> </p>
+                        </div>
+                        
+                        
                     </div> : 
                     <div>Loading...</div>
                 }

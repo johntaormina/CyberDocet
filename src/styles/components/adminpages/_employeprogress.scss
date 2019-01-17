@@ -1,0 +1,32 @@
+.emp__main__container{
+    background-color: #C6C9D6;
+    border: 1px solid $tower-gray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 3.2rem;
+    padding: 2.2rem;
+}
+
+.emp__data__container {
+    background-color: $shark;
+    padding: 0rem;
+    margin-bottom: 1.6rem;
+    margin-left: 1.6rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-start;
+    width: 90%;
+}
+
+.emp__name{
+    padding-left: 3.6rem;
+    margin-top: 1rem;
+}
+
+.progress__bar {
+    margin-left: 20px;
+    width: 700px;
+    margin-top: 1rem;
+}

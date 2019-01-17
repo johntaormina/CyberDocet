@@ -1,7 +1,6 @@
 import React from 'react';
 import { withFirebase } from './firebase/context';
 import { AuthUserContext} from './session';
-import SignInPage from './authentication/SignIn';
 import AuthLanding from './authentication/AuthLanding';
 import AdminHome from './adminpages/AdminHome';
 

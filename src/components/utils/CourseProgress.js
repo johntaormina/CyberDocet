@@ -1,3 +1,4 @@
+import { ProgressBar } from 'react-bootstrap';
 
 // Takes course data and gives back progress of completion
 // in percentage
@@ -39,7 +40,23 @@ const CourseProgress = ({courseData}) => {
         
         <div>
             {courseData ? 
-                <div>{progress_percentage}% Complete</div> : 
+
+                <div>
+
+                <div>
+                {progress_percentage}% Complete
+                </div>
+
+                <div>
+                <ProgressBar active
+                now={progress_percentage}
+                />
+                </div>
+                
+                </div> 
+                
+                
+                : 
                 <div>Loading...</div>
             }
         </div>
