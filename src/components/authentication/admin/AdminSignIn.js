@@ -6,7 +6,7 @@ import { AdminSignUpLink } from './AdminSignUp.js';
 import FirebaseContext, { withFirebase } from './../../firebase/context.js';
 
 const AdminSignInPage = () => (
-    <div>
+    <div className="page">
         <h1>Admin SignIn</h1>
         <AdminSignInForm />
         <AdminSignUpLink />

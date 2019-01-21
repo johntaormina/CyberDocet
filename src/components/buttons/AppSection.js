@@ -15,16 +15,18 @@ class AppSectionButton extends React.Component {
     render(){
         
         return(
-            <div><h4>
+            <div>
 
-            <button onClick={()=>
+            <button 
+            className="section__button"
+            onClick={()=>
             this.nextPath(`/course/${this.courseURL}/${this.sectionURL}`)}>
             
-            Go to Section Page
+            {this.props.title}
 
             </button>
             
-            </h4></div>
+            </div>
         )
     }
 }

@@ -1,0 +1,32 @@
+.footer__container {
+    height: 60px;
+    background-color: #C2C3C9;
+    display: flex;
+    padding-left: 100px;
+    flex-direction: column;
+    
+}
+
+.footer__text {
+    font-size: 94%;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.footer__contact {
+    font-size: 94%;
+    transition: all 0.4s ease 0s; 
+    color: white;
+    font-weight: bold;
+    background: none;
+    border: none;
+}
+
+.footer__contact:hover {
+    font-size: 94%;
+    color: $shark;
+    font-weight: bold;
+    background: none;
+    border: none;
+}

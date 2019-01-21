@@ -18,7 +18,7 @@ const INITIAL_STATE = {
 const INITIAL_COURSE_STATE = InitialCourseState;
 
 const SignUpPage = () => (
-    <div>
+    <div className="page">
         <h1>SignUp</h1>
         <SignUpForm />
     </div>

@@ -1,0 +1,44 @@
+.slideshow__container {
+    display: flex;
+    justify-content: space-evenly;
+    
+    height: 300px;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+.course__block__container {
+    background-color: #E3E5EC;
+    height: 240px;
+    width: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 auto;
+    position: relative;
+}
+
+.course__block__header {
+    text-align: center;
+    font-style: italic;
+    font-size: 30px;
+    padding-top: 4px;
+    
+}
+
+.course__block__line {
+    border-bottom: 1px solid $shark;
+    width: 86%;
+    margin: 0 auto;
+}
+
+.course__block__sections {
+    padding-left: 6px;
+    padding-top: 6px;
+    margin-bottom: 0px;
+}
+
+.course__block__bar {
+    position: absolute;
+    width: 200px;
+    bottom: -16px;
+}

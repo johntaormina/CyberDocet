@@ -7,3 +7,5 @@ export const HOME = '/home';
 export const ABOUT = '/about';
 export const COURSES = '/courses';
 export const ADMIN = '/admin';
+export const LEARNMORE = '/learnmore';
+export const CONTACT = '/contact';

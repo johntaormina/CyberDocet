@@ -1,13 +1,10 @@
 import React from 'react';
 import { withFirebase } from '../firebase/context';
 import { AuthUserContext} from '../session';
-import NotFound from './../NotFound.js';
 import SignInPage from '../authentication/SignIn';
-import Youtube from 'react-youtube';
 import SectionVideo from './section/SectionVideo';
-import Quiz from 'react-quiz-component';
 import SectionQuiz from './section/SectionQuiz';
-
+import CyberApp from './../CyberApp';
 
 class Course extends React.Component {
     constructor(props){
@@ -87,7 +84,7 @@ class CourseExists extends React.Component {
                     <GenerateSection
                     sectionData={sectionData}
                     props={this.props}/> 
-                    : <NotFound/>}
+                    : <CyberApp/>}
 
             </div>
         );
@@ -105,10 +102,10 @@ class GenerateSection extends React.Component {
         return (
             <div>
 
-            <div>
+            {/* <div>
                 <h2>Section: {this.sectionData.title}</h2>
                 <h3>Completed: {this.sectionData.completed ? 'YES' : 'NO'} </h3>
-            </div>
+            </div> */}
 
             <div>
 

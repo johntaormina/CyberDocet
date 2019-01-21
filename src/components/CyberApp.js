@@ -3,6 +3,7 @@ import { withFirebase } from './firebase/context';
 import { AuthUserContext} from './session';
 import AuthLanding from './authentication/AuthLanding';
 import AdminHome from './adminpages/AdminHome';
+import UserHome from './userpages/UserHome';
 
 class CourseApp extends React.Component {
 
@@ -67,7 +68,12 @@ class CourseAppAuth extends React.Component {
             {!!this.state.adminData ? 
                 <AdminHome adminData={this.state.adminData} 
                 ID={this.props.user.uid}
-                /> : <div>NOT ADMIN</div>
+                /> 
+                : 
+                <UserHome
+                firebase={this.props.firebase}
+                uid={this.props.user.uid}
+                />
             }
             </div> : <div>LOADING</div>
             

@@ -1,7 +1,6 @@
 import React from 'react';
 import { withFirebase } from '../firebase/context';
 import { AuthUserContext} from '../session';
-import NotFound from './../NotFound.js';
 import SignInPage from '../authentication/SignIn';
 import Section from './Section.js';
 import Landing from './Landing.js';

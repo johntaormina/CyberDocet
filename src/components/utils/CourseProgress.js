@@ -1,67 +1,26 @@
-import { ProgressBar } from 'react-bootstrap';
 
 // Takes course data and gives back progress of completion
 // in percentage
 
-const CourseProgress = ({courseData}) => {
+export const courseProgress = (sections) => {
     let total_sections = 0;
     let sections_completed = 0;
     let progress_percentage = undefined;
 
-    if(courseData){
-        const introduction = courseData.Introduction;
-
-        Object.keys(introduction).forEach(key => {
-            if(key !== 'title' && key !== 'urlID'){
-                total_sections++;
-                if(introduction[key].completed){
-                    sections_completed++;
-                }
+    if(sections){
+        sections.forEach(element => {
+            total_sections++;
+            if(element.completed){
+                sections_completed++;
             }
         })
 
-        const phishing = courseData.Phishing;
-
-        Object.keys(phishing).forEach(key => {
-            if(key !== 'title' && key !== 'urlID'){
-                total_sections++;
-                if(phishing[key].completed){
-                    sections_completed++;
-                }
-            }
-        })
        progress_percentage = 
        Math.round((sections_completed/total_sections)*100);
        
     }
-
     
-    return(
-        
-        <div>
-            {courseData ? 
-
-                <div>
-
-                <div>
-                {progress_percentage}% Complete
-                </div>
-
-                <div>
-                <ProgressBar active
-                now={progress_percentage}
-                />
-                </div>
-                
-                </div> 
-                
-                
-                : 
-                <div>Loading...</div>
-            }
-        </div>
-    )
+    return progress_percentage;
 }
 
 
-export default CourseProgress;

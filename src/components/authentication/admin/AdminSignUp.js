@@ -15,7 +15,7 @@ const INITIAL_STATE = {
 
 
 const AdminSignUpPage = () => (
-    <div>
+    <div className="page">
         <h1>Admin SignUp</h1>
         <AdminSignUpForm />
     </div>

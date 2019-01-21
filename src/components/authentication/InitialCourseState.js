@@ -22,7 +22,67 @@ const InitialCourseState = {
             completed: false,
             urlID: 'phishing-part1',
             course: 'Phishing',
-            videoID: '9TRR6lHviQc'
+            videoID: 'd1wBvHoW20g',
+            sectionQuiz: {
+
+
+              "quizTitle": "What is Phishing? Quiz",
+              "quizSynopsis": "An introductory quiz to phishing",
+              "questions": [
+                {
+                  "question": "Phishing is ___",
+                  "questionType": "text",
+                  "answers": [
+                    "An act in which a cybercriminal attempts to trick you into providing \n them valuable information",
+                    "Software downloaded onto your computer designed to disrupt, damage, or gain access to your computer",
+                  ],
+                  "correctAnswer": "1",
+                  "messageForCorrectAnswer": "Correct answer. Good Job.",
+                  "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+                  "explanation": "Remember that phishing is the act in which someone attempts to gain information from you by any means. Malware downloaded onto your computer could be the result of a successful phishing attempt in which the criminal now has access to your computer."
+                },
+                {
+                  "question": "Clicking a suspicious link on your home computer can put your company's data at risk.",
+                  "questionType": "text",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "correctAnswer": "1",
+                  "messageForCorrectAnswer": "Correct answer. Good job.",
+                  "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+                  "explanation": "Once the criminal has access to your computer, he or she has the ability to access passwords, files, and other information on your computer. They can even move to other computers using the same network as you. This can and most likely will cause damage to your company's valuble information if left unhandled."
+                },
+                {
+                  "question": "As companies start to require more phishing awareness training, the number of phishing attempts has gone down.",
+                  "questionType": "text",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "correctAnswer": "2",
+                  "messageForCorrectAnswer": "Correct answer. Good job.",
+                  "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+                  "explanation": "The number of phishing attempts is only rising and the only way to protect yourself is with good internet practice!"
+                },
+                {
+                  "question": "What is an example of a Too Good To Be True phishing attempt?",
+                  "questionType": "text",
+                  "answers": [
+                    "An email detailing a recent payment you have made, asking for your home address",
+                    "A text message from an unknown number stating a family member is in the hospital and needs your social security number",
+                    "A message on Facebook from a lottery company stating you won $5000 dollars and sends you a link to claim your reward",
+                    "An attachment from your bosses email that he asks you too download for a new product proposal at work"
+                  ],
+                  "correctAnswer": "3",
+                  "messageForCorrectAnswer": "Correct answer. Good job.",
+                  "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+                  "explanation": "A phishing attempt does not always have to be delivered by email. It can be through a text message, social media platforms, and more."
+                }
+              ]
+
+
+            }
         },
         Sub2: {
             title: 'Phishing Quiz',
@@ -31,7 +91,7 @@ const InitialCourseState = {
             course: 'Phishing',
             name: 'Sub2',
             sectionQuiz:  {
-                "quizTitle": "React Quiz Component Demo",
+                "quizTitle": "Phishing Final Quiz",
                 "quizSynopsis": "Test your knowledge about Phishing with this quiz!!!!",
                 "questions": [
                   {

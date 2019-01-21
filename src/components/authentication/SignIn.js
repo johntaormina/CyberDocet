@@ -6,7 +6,7 @@ import { SignUpLink } from './SignUp.js';
 import FirebaseContext, { withFirebase } from './../firebase/context.js';
 
 const SignInPage = () => (
-    <div>
+    <div className="page">
         <h1>SignIn</h1>
         <SignInForm />
         <SignUpLink />

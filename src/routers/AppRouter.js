@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CyberApp from '../components/CyberApp.js';
 import About from '../components/About.js';
-import Courses from '../components/Courses.js';
+import Courses from '../components/userpages/Courses.js';
 import Header from '../components/Header.js'
 import SignIn from '../components/authentication/SignIn.js';
 import SignUp from '../components/authentication/SignUp.js';
-import Admin from '../components/Admin.js';
 import Course from '../components/Course/Course.js';
 import AdminSignUp from '../components/authentication/admin/AdminSignUp.js';
 import AdminSignIn from '../components/authentication/admin/AdminSignIn.js';
+import Footer from '../components/Footer.js';
 
 import * as ROUTES from './routes.js';
 
-import { BrowserRouter, Route, Switch, Router, NavLink } from 'react-router-dom';
-import { withFirebase } from '../components/firebase/context.js'
-import { AuthUserContext } from '../components/session';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import { withAuthentication } from './../components/session';
+import LearnMore from '../components/LearnMore.js';
+import Contact from '../components/Contact.js';
 
 class AppRouter extends React.Component {
 
@@ -32,15 +33,16 @@ class AppRouter extends React.Component {
                 <Route path={ROUTES.ADMIN_SIGN_UP} component={AdminSignUp}/>
                 <Route path={ROUTES.ADMIN_SIGN_IN} component={AdminSignIn}/>
                 <Route path={ROUTES.SIGN_IN} component={SignIn}/>
-                <Route path={ROUTES.HOME} component={CyberApp}  />
                 <Route path={ROUTES.COURSES} component={Courses}/> 
                 <Route path={ROUTES.ABOUT} component={About} />
-                <Route path={ROUTES.ADMIN} component={Admin} />
                 <Route path={ROUTES.HOME} component={CyberApp}  />
+                <Route path={ROUTES.LEARNMORE} component={LearnMore}/>
+                <Route path={ROUTES.CONTACT} component={Contact}/>
                 <Route path="/course/:course/:id?" component={Course}/>
                 <Route path="/*" component={CyberApp}/>
-
             </Switch>
+            <Footer/>
+
         </div>
     </BrowserRouter>
     

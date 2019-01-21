@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FirebaseContext, { withFirebase } from './../firebase/context.js';
+import { withFirebase } from './../firebase/context.js';
 
 
 const SignOutButton = ({ firebase }) => (

@@ -1,9 +1,9 @@
 import React from 'react';
-import { withFirebase } from './firebase/context';
-import { AuthUserContext} from './session';
-import SignInPage from './authentication/SignIn';
-import AppLandingButton from './buttons/AppLanding';
-import AppSectionButton from './buttons/AppSection';
+import { withFirebase } from '../firebase/context';
+import { AuthUserContext} from '../session';
+import AppLandingButton from '../buttons/AppLanding';
+import AppSectionButton from '../buttons/AppSection';
+import AuthLanding from '../authentication/AuthLanding';
 
 class Courses extends React.Component {
 
@@ -18,7 +18,7 @@ class Courses extends React.Component {
             {authUser =>
                 authUser ? <CoursesAuth uid={authUser}
                 firebase={this.props}/> 
-                : <SignInPage/>
+                : <AuthLanding/>
             }
             </AuthUserContext.Consumer>
             </div>
@@ -38,7 +38,7 @@ class CoursesAuth extends React.Component {
         };
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.setState({ loading: true });
 
         this.props.firebase.firebase.user(this.uid).on('value', snapshot => {
@@ -49,6 +49,10 @@ class CoursesAuth extends React.Component {
                 loading: false
             });
         });
+    }
+
+    componentWillUnmount(){
+        this.props.firebase.firebase.user(this.uid).off();
     }
 
     render() {
@@ -69,12 +73,13 @@ class CoursesAuth extends React.Component {
 
 const ListOfCourses = ({allCourseData}) => (
     
-    <div>
+    <div className="courses__container">
     {Object.keys(allCourseData).map(courseName => (
-        <div key={courseName}>
+        <div key={courseName}
+        >
 
-        <div className="row">
-        <h2>Course: {allCourseData[courseName].title} </h2>
+        <div className="courses__headertext">
+        <h2>{allCourseData[courseName].title} </h2>
         
         </div>
 
@@ -110,23 +115,53 @@ class ListOfSections extends React.Component {
     render() {
       
         return (
-            <ul>
-            <div>
+            
+            <div className="sections__container">
             {Object.keys(this.getSections(this.courseData)).map(section => (
-                <div key={section} className="row">
+                <div key={section} 
+                className="section__container">
 
-                <h4>
-                {this.courseData[section].title} Completed:
-                {this.courseData[section].completed ? ' YES' : ' NO'}
-                </h4>
+                <h4 className="section__text">
+
                 <AppSectionButton
                 courseURL={this.courseData.urlID}
                 sectionURL={this.courseData[section].urlID}
+                title={this.courseData[section].title}
                 />
+
+                </h4>
+                {this.courseData[section].completed ? 
+                <div className="completed__container">
+                    <div>
+                    <h4 className="section__text">Completed</h4>
+                    </div>
+                    
+                    <div className="completed__logo">
+
+                    </div>
+
+                </div> : 
+
+                <div className="completed__container">
+                    <div>
+                    <h4 className="section__text">Not Completed</h4>
+                    </div>
+                    
+                    <div className="notcompleted__logo">
+
+                    </div>
+
+                </div>
+
+                }
+                
+
+                
+
                 </div>
             ))}
             </div>
-            </ul>
+            
         )
     }
 }

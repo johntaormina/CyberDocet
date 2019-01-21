@@ -1,0 +1,86 @@
+.courses__container {
+    margin: 4rem;
+    background: #C6C9D6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 2.2rem;
+}
+
+.courses__headertext {
+    font-weight: bold;
+    color: $shark;
+    text-transform: uppercase;
+    border-bottom: 1px solid $shark;
+    display: inline-block;
+    margin: 12px;
+}
+
+.sections__container {
+    border-radius: 15px;
+    padding: 1.2rem;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.section__container {
+    display: flex;
+    border-radius: 15px;
+    background: $shark;
+    margin-bottom: 1.2rem;
+    margin-top: .8rem;
+    width: 100%;
+    padding: 1.4rem;
+    justify-content: space-between;
+    position: relative;
+}
+
+.section__text {
+    color: white;
+    margin-left: 2.2rem;
+    font-size: 200%;
+    font-style: italic;
+    
+}
+
+.section__button{
+    background: $shark;
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    
+    transition: all 0.3s ease 0s; 
+}
+
+.section__button:hover {
+    background: $blue-bayoux;
+
+}
+
+.completed__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.completed__logo{
+    background: url('/images/logo-white.png');
+    background-repeat: no-repeat; 
+    background-size: 120px 70px;
+    background-position: left top;
+    width: 120px;
+    border: 0px solid $gray1;
+    padding: 3.8rem;
+    
+}
+
+.notcompleted__logo {
+    background: url('/images/open-white.png');
+    background-repeat: no-repeat; 
+    background-size: 120px 70px;
+    background-position: left top;
+    width: 120px;
+    border: 0px solid $gray1;
+    padding: 3.8rem;
+    
+}

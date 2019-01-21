@@ -1,5 +1,5 @@
 import React from 'react';
-import Quiz from 'react-quiz-component';
+import Quiz from 'reactjs-quiz';
 
 export default class SectionQuiz extends React.Component{
   _isMounted = false;
@@ -32,6 +32,7 @@ export default class SectionQuiz extends React.Component{
           this.setState({loading: false});
       });
     }
+
   }
 
   completed(){
@@ -47,7 +48,18 @@ export default class SectionQuiz extends React.Component{
     this.completed();
     
     return(
-      <div><Quiz quiz={this.quiz}/>></div>
+
+      <div className="quiz__page__container">
+
+        <div className="quiz__container">
+          <div className="quiz">
+            <Quiz quiz={this.quiz}></Quiz>
+          </div>
+            
+        </div>
+
+      </div>
+
     )
   }
 }
