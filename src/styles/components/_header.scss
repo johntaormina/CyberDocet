@@ -4,8 +4,7 @@
     margin-bottom: $l-size;
     margin-top: -8px;
     position: relative;
-    margin-left: -8px;
-    margin-right: -8px;
+
     padding: .4rem;
 }
 
@@ -28,24 +27,53 @@
 }
 
 .header__logo{
-    background: url('/images/name-white.png');
+    background: url('/images/headerlogo-white.png');
     background-repeat: no-repeat; 
-    background-size: 200px 70px;
+    background-size: 100px 60px;
     background-position: left top;
-    width: 200px;
+    height: 60px;
+    width: 100px;
+    margin-left: 20px;
+    margin-top: 10px;
+    border: 0px solid $gray1;
+    transition: all 0.4s ease .1s; 
+}
+
+.header__logo:hover{
+    background: url('/images/headerlogo-gradblue.png');
+    background-repeat: no-repeat; 
+    background-size: 100px 60px;
+    background-position: left top;
+    height: 60px;
+    width: 100px;
+    margin-left: 20px;
+    margin-top: 10px;
+    border: 0px solid $gray1;
+    transition: all 0.4s ease 0s; 
+}
+
+.header__lock {
+    background: url('/images/logo-white.png');
+    background-repeat: no-repeat; 
+    background-size: 70px 60px;
+    background-position: left top;
+    width: 100px;
     border: 0px solid $gray1;
     padding: 3.8rem;
     transition: all 0.4s ease 0s; 
 }
 
-.header__logo:hover{
-    background-color: $rock-blue;
-    opacity: 1;
+
+.header__lock:hover {
+    background: url('/images/logo-blue.png');
     cursor: pointer;
-    background: url('/images/logo-white.png');
     background-repeat: no-repeat; 
-    background-size: 35%;
-    background-position: 3rem center;
+    background-size: 100px 70px;
+    background-position: left top;
+    width: 100px;
+    border: 0px solid $gray1;
+    padding: 3.8rem;
+    transition: all 0.4s ease 0s; 
 }
 
 .header--left{
@@ -54,10 +82,64 @@
 
 .header--right{
     float: right;
+    display: flex;
 }
 
 .header__divider {
     width: 50rem;
     height: auto;
     display: inline-block;
+}
+
+.header__getstarted__button {
+    color: #2C2D2D;
+    border: 0px solid $gray1;
+    background-color: $shark;
+    transition: all 0.3s ease 0s; 
+    margin: 14px 10px;
+    height: 40px;
+    width: 120px;
+    font-size: 13px;
+    font-weight: bold;
+    background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ebebeb 50%,
+		#dbdbdb 50%,
+		#b5b5b5);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffffff),
+		color-stop(0.50, #ebebeb),
+		color-stop(0.50, #dbdbdb),
+		to(#b5b5b5));
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #949494;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,1);
+}
+
+.header__signin__button {
+    font-size: 2rem;
+    color: white;
+    border: 0px solid $gray1;
+    background-color: $shark;
+    transition: all 0.3s ease 0s; 
+    margin: 20px 2px;
+}
+
+.header__signin__button:hover {
+    color: $rock-blue;
 }

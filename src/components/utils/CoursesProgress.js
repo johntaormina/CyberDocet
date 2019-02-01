@@ -6,7 +6,7 @@ export const coursesProgress = (courseData) => {
     let total_sections = 0;
     let sections_completed = 0;
     let progress_percentage = undefined;
-
+    
     if(courseData){
         const introduction = courseData.Introduction;
 
@@ -29,6 +29,19 @@ export const coursesProgress = (courseData) => {
                 }
             }
         })
+
+        const internet = courseData.InternetEtiquette;
+
+        Object.keys(internet).forEach(key => {
+            if(key !== 'title' && key !== 'urlID'){
+                total_sections++;
+                if(internet[key].completed){
+                    sections_completed++;
+                }
+            }
+        })
+
+
        progress_percentage = 
        Math.round((sections_completed/total_sections)*100);
        

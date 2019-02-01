@@ -1,9 +1,12 @@
 .footer__container {
-    height: 60px;
     background-color: #C2C3C9;
     display: flex;
     padding-left: 100px;
     flex-direction: column;
+    clear: both;
+    position: relative;
+    height: 60px;
+    margin-top: -60px;
     
 }
 

@@ -53,17 +53,62 @@ class EmployeeCourses extends React.Component{
 class EmployeeList extends React.Component{
     constructor(props){
         super(props);
+        this.filterList = this.filterList.bind(this);
+        this.firebase = this.props.firebase;
+        
+        this.state = {
+            initialItems: [],
+            items: []
+        }
+    }
+
+    componentDidUpdate(){
+        if(this.state.initialItems.length == 0){
+            var hash = new Object();
+            this.props.employees.forEach((ele) => {
+                this.firebase.uidToName(ele)
+                .then(function(value){
+                    hash[ele] = value
+                })
+            })
+            this.setState({
+                initialItems: hash,
+                items: this.props.employees
+            })   
+        }
+    }
+
+ 
+
+    filterList(event){
+        var updatedList = this.state.initialItems;
+        updatedList = Object.keys(updatedList)
+        .filter((item) => {
+            return this.state.initialItems[item].toLowerCase().search(
+                event.target.value.toLowerCase()) !== -1;
+        });
+        this.setState({items:updatedList})
+        
     }
 
     render(){
+        
         return(
             <div>
-            <h2>Employees</h2>
 
-            
             <div className="emp__main__container">
+
+            <div className="admin__top">
+            <h2 className="admin__title">Employees</h2>
+            <form className="admin__searchbar">
+                <fieldset className="form-group">
+                    <input type="text" className="form-control"
+                    placeholder="Search" onChange={this.filterList}/>
+                </fieldset>
+            </form>
+            </div>
             
-                {this.props.employees.map(employee =>(
+                {this.state.items.map(employee =>(
                     <EmployeeData 
                     uid={employee} 
                     firebase={this.props.firebase}

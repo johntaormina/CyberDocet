@@ -149,10 +149,19 @@ const HeaderNotAuth = (props) => (
     
     <div className="header--right">
 
-            <NavLink to={ROUTES.LEARNMORE}>
-            <button className="header__button">
-            Learn More
+            <div>
+            <NavLink to={ROUTES.SIGN_IN}>
+            <button className="header__signin__button">
+            Sign In
             </button></NavLink>
+            </div>
+        
+            <div>
+            <NavLink to={ROUTES.SIGN_UP}>
+            <button className="header__getstarted__button">
+            Get Started!
+            </button></NavLink>
+            </div>
 
             
 

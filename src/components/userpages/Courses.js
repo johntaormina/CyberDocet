@@ -58,7 +58,7 @@ class CoursesAuth extends React.Component {
     render() {
         const {courseData, loading} = this.state; 
         return (
-            <div>
+            <div className="page">
             {loading && <div>Loading ...</div>}
             
             <ListOfCourses 
@@ -133,7 +133,7 @@ class ListOfSections extends React.Component {
                 {this.courseData[section].completed ? 
                 <div className="completed__container">
                     <div>
-                    <h4 className="section__text">Completed</h4>
+                    <h4 className="completed__text">Completed</h4>
                     </div>
                     
                     <div className="completed__logo">
@@ -144,7 +144,7 @@ class ListOfSections extends React.Component {
 
                 <div className="completed__container">
                     <div>
-                    <h4 className="section__text">Not Completed</h4>
+                    <h4 className="completed__text">Not Completed</h4>
                     </div>
                     
                     <div className="notcompleted__logo">

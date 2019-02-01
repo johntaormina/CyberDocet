@@ -1,26 +1,30 @@
+.userhome__shady{
+    float: right;
+}
+
 .slideshow__container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     
     height: 300px;
-    margin-left: 40px;
-    margin-right: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
 }
 
 .course__block__container {
     background-color: #E3E5EC;
     height: 240px;
-    width: 200px;
+    width: 210px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 0 auto;
+    margin: 0 30px;
     position: relative;
 }
 
 .course__block__header {
     text-align: center;
     font-style: italic;
-    font-size: 30px;
+    font-size: 24px;
     padding-top: 4px;
     
 }
@@ -42,3 +46,4 @@
     width: 200px;
     bottom: -16px;
 }
+

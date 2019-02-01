@@ -95,14 +95,15 @@ class SignUpFormBase extends React.Component {
             companyID ==='';
 
         return (
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.onSubmit}
+            className="signup__inputs__container">
                 <input
                     name="companyID"
                     value={companyID}
                     onChange={this.onChange}
                     type="text"
                     placeholder="Company SignUp ID"
-                  
+                    className="signup__empass"
                 />
                 <input
                     name="username"
@@ -110,7 +111,7 @@ class SignUpFormBase extends React.Component {
                     onChange={this.onChange}
                     type="text"
                     placeholder="Full Name"
-                  
+                    className="signup__empass"
                 />
                 <input
                     name="email"
@@ -118,6 +119,7 @@ class SignUpFormBase extends React.Component {
                     onChange={this.onChange}
                     type="text"
                     placeholder="Email Address"
+                    className="signup__empass"
                 />
                 <input
                     name="passwordOne"
@@ -125,6 +127,7 @@ class SignUpFormBase extends React.Component {
                     onChange={this.onChange}
                     type="password"
                     placeholder="Password"
+                    className="signup__empass"
                 />
                 <input
                     name="passwordTwo"
@@ -132,10 +135,12 @@ class SignUpFormBase extends React.Component {
                     onChange={this.onChange}
                     type="password"
                     placeholder="Confirm Password"
+                    className="signup__empass"
                 />
                 <button
                     type="submit"
                     disabled={isInvalid}
+                    className="signup__button"
                 >Sign Up</button>
 
                 {error && <p>{error.message}</p>}

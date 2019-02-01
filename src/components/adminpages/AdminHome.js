@@ -14,7 +14,7 @@ class AdminHome extends React.Component {
     render(){
         
         return(
-            <div>
+            <div className="page">
                 <p>You are the admin of {this.props.adminData.company}</p>
                 <p>Your employee sign up ID is: {this.props.adminData.companyID}</p>
                 <EmployeeCourses 

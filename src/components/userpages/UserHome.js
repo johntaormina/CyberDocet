@@ -1,6 +1,8 @@
 import React from 'react';
 import { courseProgress } from './../utils/CourseProgress';
 import { ProgressBar } from 'react-bootstrap';
+import Shady from '../shady/Shady';
+import HomeCourseSlide from './HomeCourseSlide';
 
 
 class UserHome extends React.Component {
@@ -33,7 +35,7 @@ class UserHome extends React.Component {
     render(){
         const {loading} = this.state;
         const {userData} = this.state;
-        
+        console.log(userData);
         return(
             <div className="page">
                 {loading ? 
@@ -56,9 +58,14 @@ class UserHome extends React.Component {
                     )}
                     
                     </div>
+                    {/* <HomeCourseSlide data={userData.Courses}/> */}
+
 
                 </div>
                 }
+                <div className="userhome__shady">
+                    <Shady/>
+                </div>
 
             </div>
         )
@@ -100,7 +107,6 @@ class CourseProgressBlock extends React.Component {
         const {loading} = this.state;
         const {sections} = this.state;
         const progress = courseProgress(this.state.sections);
-        
         return(
             <div>
                 {loading ? 
@@ -108,7 +114,7 @@ class CourseProgressBlock extends React.Component {
                 : 
                 <div className="course__block__container">
                     <h1 className="course__block__header">
-                        {sections[0].course}
+                        {this.courseData.title}
                     </h1>
                     <div className="course__block__line"></div>
 

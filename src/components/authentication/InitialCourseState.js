@@ -84,12 +84,12 @@ const InitialCourseState = {
 
             }
         },
-        Sub2: {
+        Sub3: {
             title: 'Phishing Quiz',
             completed: false,
             urlID: 'phishing-quiz1',
             course: 'Phishing',
-            name: 'Sub2',
+            name: 'Sub3',
             sectionQuiz:  {
                 "quizTitle": "Phishing Final Quiz",
                 "quizSynopsis": "Test your knowledge about Phishing with this quiz!!!!",
@@ -145,7 +145,27 @@ const InitialCourseState = {
                 ]
               } 
 
+        },
+        Sub2: {
+            name: 'Sub2',
+            title: 'Phishing Examples',
+            completed: false,
+            urlID: 'phishing-part2',
+            course: 'Phishing',
+            videoID: 'BIkhkjtHOuw',
         }
+    },
+    InternetEtiquette: {
+      title: 'Internet Etiquette',
+      urlID: 'internet',
+      Sub1: {
+        name: 'Sub1',
+        title: 'Password Management',
+        completed: false,
+        urlID: 'internet-password',
+        course: 'InternetEtiquette',
+        videoID: 'PmXc5sSkpxg',
+    }
     }
 }
 

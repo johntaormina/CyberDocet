@@ -4,6 +4,7 @@ import { AuthUserContext} from './session';
 import AuthLanding from './authentication/AuthLanding';
 import AdminHome from './adminpages/AdminHome';
 import UserHome from './userpages/UserHome';
+import HomePage from './HomePage';
 
 class CourseApp extends React.Component {
 
@@ -18,7 +19,7 @@ class CourseApp extends React.Component {
             {authUser =>
                 authUser ? <CourseAppAuth user={authUser} firebase={this.props.firebase}
                 /> 
-                : <AuthLanding/>
+                : <HomePage/>
             }
             </AuthUserContext.Consumer>
             </div>

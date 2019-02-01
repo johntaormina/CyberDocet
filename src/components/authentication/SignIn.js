@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
 import { SignUpLink } from './SignUp.js';
-import FirebaseContext, { withFirebase } from './../firebase/context.js';
+import { withFirebase } from './../firebase/context.js';
 
 const SignInPage = () => (
     <div className="page">
@@ -52,13 +52,15 @@ class SignInFormBase extends React.Component {
         const isInvalid = password === '' || email === '';
 
         return (
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.onSubmit} 
+            className="signin__inputs__container">
                 <input
                     name="email"
                     value={email}
                     onChange={this.onChange}
                     type="text"
                     placeholder="Email Address"
+                    className="signin__empass"
                 />
                 <input
                     name="password"
@@ -66,8 +68,11 @@ class SignInFormBase extends React.Component {
                     onChange={this.onChange}
                     type="password"
                     placeholder="Password"
+                    className="signin__empass"
                 />
-                <button disabled={isInvalid} type="submit">
+                <button disabled={isInvalid} 
+                className="signin__button"
+                type="submit">
                     Sign In
                 </button>
 
