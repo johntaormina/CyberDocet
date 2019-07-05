@@ -1,5 +1,4 @@
 # Random
-/public
 database.rules.json
 
 functions/
@@ -19,7 +18,6 @@ yarn.lock
 # Firebase config
 
 # public
-public/
 
 # Uncomment this if you'd like others to create their own Firebase project.
 # For a team working on the same Firebase project(s), it is recommended to leave
@@ -52,7 +50,6 @@ bower_components
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
-public
 # Dependency directories
 node_modules
 
