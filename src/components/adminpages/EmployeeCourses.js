@@ -19,7 +19,6 @@ class EmployeeCourses extends React.Component{
         this.props.firebase.adminEmployeeList(this.props.ID)
         .on('value', snapshot => {
             const employeeObject = snapshot.val();
-
             const employeeList = Object.keys(employeeObject)
             .map(key =>(employeeObject[key]));
 
@@ -32,6 +31,7 @@ class EmployeeCourses extends React.Component{
 
     render(){
         const {employees, loading} = this.state;
+        
         return(
             <div>
                 {loading && <div>Loading...</div>}

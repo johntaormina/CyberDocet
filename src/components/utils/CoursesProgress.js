@@ -8,8 +8,8 @@ export const coursesProgress = (courseData) => {
     let progress_percentage = undefined;
     
     if(courseData){
-        const introduction = courseData.Introduction;
-
+        const introduction = courseData.Course1;
+        console.log(courseData);
         Object.keys(introduction).forEach(key => {
             if(key !== 'title' && key !== 'urlID'){
                 total_sections++;
@@ -19,7 +19,7 @@ export const coursesProgress = (courseData) => {
             }
         })
 
-        const phishing = courseData.Phishing;
+        const phishing = courseData.Course2;
 
         Object.keys(phishing).forEach(key => {
             if(key !== 'title' && key !== 'urlID'){
@@ -30,7 +30,7 @@ export const coursesProgress = (courseData) => {
             }
         })
 
-        const internet = courseData.InternetEtiquette;
+        const internet = courseData.Course3;
 
         Object.keys(internet).forEach(key => {
             if(key !== 'title' && key !== 'urlID'){

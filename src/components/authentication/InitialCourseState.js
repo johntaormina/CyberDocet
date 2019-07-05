@@ -1,7 +1,7 @@
 
 
 const InitialCourseState = {
-    Introduction: {
+    Course1: {
         title: 'Introduction',
         urlID: 'introduction',
         Sub1: {
@@ -9,11 +9,11 @@ const InitialCourseState = {
             title: 'Introduction',
             completed: false,
             urlID:'introduction-introduction',
-            course: 'Introduction',
+            course: 'Course1',
             videoID: 'vvsfM5Dixow'
         }
     },
-    Phishing: {
+    Course2: {
         title: 'Phishing',
         urlID: 'phishing',
         Sub1: {
@@ -21,7 +21,7 @@ const InitialCourseState = {
             title: 'What is Phishing?',
             completed: false,
             urlID: 'phishing-part1',
-            course: 'Phishing',
+            course: 'Course2',
             videoID: 'd1wBvHoW20g',
             sectionQuiz: {
 
@@ -88,7 +88,7 @@ const InitialCourseState = {
             title: 'Phishing Quiz',
             completed: false,
             urlID: 'phishing-quiz1',
-            course: 'Phishing',
+            course: 'Course2',
             name: 'Sub3',
             sectionQuiz:  {
                 "quizTitle": "Phishing Final Quiz",
@@ -151,11 +151,11 @@ const InitialCourseState = {
             title: 'Phishing Examples',
             completed: false,
             urlID: 'phishing-part2',
-            course: 'Phishing',
+            course: 'Course2',
             videoID: 'BIkhkjtHOuw',
         }
     },
-    InternetEtiquette: {
+    Course3: {
       title: 'Internet Etiquette',
       urlID: 'internet',
       Sub1: {
@@ -163,7 +163,7 @@ const InitialCourseState = {
         title: 'Password Management',
         completed: false,
         urlID: 'internet-password',
-        course: 'InternetEtiquette',
+        course: 'Course3',
         videoID: 'PmXc5sSkpxg',
     }
     }

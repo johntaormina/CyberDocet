@@ -3,7 +3,7 @@ import { withFirebase } from '../firebase/context';
 import { AuthUserContext} from '../session';
 import AppLandingButton from '../buttons/AppLanding';
 import AppSectionButton from '../buttons/AppSection';
-import AuthLanding from '../authentication/AuthLanding';
+import HomePage from '../HomePage';
 
 class Courses extends React.Component {
 
@@ -18,7 +18,7 @@ class Courses extends React.Component {
             {authUser =>
                 authUser ? <CoursesAuth uid={authUser}
                 firebase={this.props}/> 
-                : <AuthLanding/>
+                : <HomePage/>
             }
             </AuthUserContext.Consumer>
             </div>
@@ -58,7 +58,7 @@ class CoursesAuth extends React.Component {
     render() {
         const {courseData, loading} = this.state; 
         return (
-            <div className="page">
+            <div className="courses__page">
             {loading && <div>Loading ...</div>}
             
             <ListOfCourses 
